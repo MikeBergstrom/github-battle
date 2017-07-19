@@ -1,0 +1,7 @@
+* {
+    display: inline-block;
+}
+#player1, #player2{
+    border: 1px solid black;
+    margin: 30px;
+}

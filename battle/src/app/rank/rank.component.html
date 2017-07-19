@@ -1,0 +1,7 @@
+<h1>Rankings</h1>
+<table>
+  <tr *ngFor= 'let player of players | sort, let idx = index'>
+    <td>{{idx+1}}</td>
+    <td>{{player.name}}</td>
+    <td>Score: {{player.score}}</td>
+  </tr>

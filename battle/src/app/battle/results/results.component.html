@@ -1,0 +1,15 @@
+<h1 style="color:green">1st Place</h1>
+<h4 *ngIf="players[0].score > players[1].score">{{players[0].name}} (Score: {{players[0].score}})</h4>
+<h4 *ngIf="players[0].score < players[1].score">{{players[1].name}} (Score: {{players[1].score}})</h4>
+<h1 style="color:red">2nd Place</h1>
+<h4 *ngIf="players[0].score > players[1].score">{{players[1].name}} (Score: {{players[1].score}})</h4>
+<h4 *ngIf="players[0].score < players[1].score">{{players[0].name}} (Score: {{players[0].score}})</h4>
+<div *ngIf='players[0].score > players[1].score'>
+    <img [src]=players[0].image width="200">
+    <h4>{{players[0].name}}</h4>
+</div>
+<div *ngIf='players[0].score < players[1].score'>
+    <img [src]=players[1].image width="200">
+    <h4>{{players[1].name}}</h4>
+</div>
+<button (click)='startAgain()'>Start again</button>

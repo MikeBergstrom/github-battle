@@ -1,0 +1,33 @@
+<div id='player1'>
+  <div *ngIf='!player1status.status'>
+    <h1>Player 1</h1><br>
+    <form (submit)='addPlayer1()' #player1form='ngForm'>
+      <label>GitHub Username: </label>
+      <input type="text" [(ngModel)]='player1.name' name="name"><br>
+      <input type="submit"  value="Get User" [disabled]="!player1form.form.valid">
+    </form>
+  </div>
+  <div *ngIf='player1status.status'>
+    <img [src]=player1.image width="300">
+    <h1>{{player1.name}}</h1>
+    <h1>{{player1.score}}</h1>
+  </div>
+</div>
+<div id="player2">
+  <div *ngIf='!player2status.status'>
+    <h1>Player 2</h1><br>
+    <form (submit)='addPlayer2()' #player2form='ngForm'>
+      <label>GitHub Username: </label>
+      <input type="text" [(ngModel)]='player2.name' name="name"><br>
+      <input type="submit"  value="Get User" [disabled]="!player2form.form.valid">
+    </form>
+  </div>
+  <div *ngIf='player2status.status'>
+    <img [src]=player2.image width="300">
+    <h1>{{player2.name}}</h1>
+    <h1>{{player2.score}}</h1>
+  </div>
+</div><br> 
+<div *ngIf="player2status.status && player1status.status">
+  <a [routerLink]="['/battle', 'results']">Battle</a>
+</div>
